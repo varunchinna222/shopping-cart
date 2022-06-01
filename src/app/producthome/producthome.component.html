@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<div class="header">
+    <h1><a routerLink="">MultiFoods</a></h1>
+    <button routerLink="Cart"><span>{{length}}</span><i class="fa-solid fa-cart-shopping"></i></button>
+</div>
+
+<div *ngIf="cartitems">
+    <div class="heading">
+        <h1>
+            Products
+        </h1>
+    </div>
+
+    <div class="product-list">
+        <div *ngFor="let data of productList" class="list">
+            <img src="https://picsum.photos/id/7/200/300" alt="product type">
+            <p>Product :{{data.item_name}}</p>
+            <p>Price :{{data.price}}</p>
+            <div class="add">
+                <button *ngIf="items.length>0" (click)="removeitem(data)">-</button>
+                <span>{{length}}</span>
+                <button (click)="additem(data)">+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isLoader" class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    height: 80px;
+    align-items: center;
+    border-bottom: 1px solid #cac7c7;
+    padding: 0px 100px;
+    position: fixed;
+    top: 0;
+}
+
+.header h1 a {
+    font-size: 30px;
+    color: #008000;
+    text-decoration: none;
+}
+
+.header button {
+    border: none;
+    position: relative;
+
+}
+
+.header span {
+    font-size: 12px;
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    background-color: #41b841;
+    margin: 0;
+    padding: 0;
+}
+
+.header button:hover span {
+    background-color: #008000;
+    color: #fff;
+}
+
+.header i {
+    width: 65px;
+    height: 65px;
+    font-size: 25px;
+    background-color: #41b841;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header i:hover {
+    background-color: #008000;
+    color: #ffffff;
+}
+
+.cartData {
+    margin-top: 100px;
+}
+
+table,
+th,
+tr,
+td {
+    border: 1px solid #008000;
+    border-collapse: collapse;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+tfoot,tr{
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}

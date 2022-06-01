@@ -1,0 +1,50 @@
+<div class="header">
+    <h1><a routerLink="Cart">MultiFoods</a></h1>
+    <div>
+        <label for="currency type">Select country</label>
+        <select name="currency" id="" [(ngModel)]="selectedCountry">
+        <option value="" selected disabled>--Select currency--</option>
+        <option *ngFor="let country of countries" [value]="country">{{country.country}}</option>
+    </select>
+    </div>
+    
+    <button routerLink="Cart"><span>{{length}}</span><i class="fa-solid fa-cart-shopping"></i></button>
+</div>
+
+
+<div class="cartData">
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of items">
+                <td>{{data.item_name}}</td> 
+                <td>{{data.price | currency:getCurrency()}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total Amount</td>
+                <td>{{totalamount | currency:getCurrency()}}</td>
+            </tr>
+            <tr *ngIf="total>500">
+                <td>Discount</td>
+                <td>- 20%</td>
+            </tr>
+            <tr *ngIf="total<500 && total>100">
+                <td>Discount</td>
+                <td>- 10%</td>
+            </tr>
+            <tr>
+                <td>Payable Amount</td> 
+                <td>{{total | currency:getCurrency()}}</td>
+            </tr>
+        </tfoot>
+    </table>
+    <!-- <p>{{convertWithCurrencyRate(555, selectedCountry)| currency: selectedCountry:true:'3.2-2'}}</p> -->
+    
+</div>
